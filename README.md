@@ -17,5 +17,9 @@ The CAN_BUS_Shield folder contains files from
 
 ![MCP2515](/images/mcp2515.jpg)
 
+The connection between the Arduino and the MCP2515 module is SPI
+
+![MCP2515 Wiring](/images/mcp2515-wiring.jpg)
+
 Slides from this meetup are available at Slide Share:
 * http://www.slideshare.net/roadster43
