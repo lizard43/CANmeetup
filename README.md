@@ -1,4 +1,4 @@
-# CANmeetup
+# CAN Bus meetup talk
 CAN Bus demo files from 4 Feb 2016 meetup
 * http://www.meetup.com/FW-Dev/events/228176322/
 
@@ -6,6 +6,7 @@ CAN Bus demo files from 4 Feb 2016 meetup
 
 This repository consists of:
 * Arduino files used to simulate CAN Bus messages using the MCP2515 controller.
+* Arduino files used to read CAN Bus messages and send to serial port as a JSON message.
 * NodeJS files for reading serial port input and pushing out to websocket
 * NodeJS files for a simple webserver that serves html file with RPM gauge in D3.js
 
@@ -19,7 +20,7 @@ The CAN_BUS_Shield folder contains files from
 
 The connection between the Arduino and the MCP2515 module is SPI
 
-![MCP2515 Wiring](/images/mcp2515-wiring.jpg)
+![MCP2515 Wiring](/images/mcp2515-wiring.png)
 
 Slides from this meetup are available at Slide Share:
 * http://www.slideshare.net/roadster43

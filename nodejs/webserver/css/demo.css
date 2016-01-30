@@ -1,0 +1,36 @@
+/*body {
+    font: 10px arial;
+    background-color:#202040;
+    COLOR: grey;
+}
+*/
+body {
+    font: 16px arial;
+    background-color: #515151;
+}
+
+#check {
+	display: none;
+	position: absolute;
+	left: 530px;
+	top:  60px;
+	height: 35px;
+}
+
+textarea {
+	display: none;
+    font: 10px arial;
+    color: black;
+	background: #8C9490;
+	border: 2px;
+	border-color: #42506D;
+	border-style: solid;
+	width: 70%;
+	height: 40%;
+	position: absolute;
+	left: 5px;
+	top: 250px;
+	resize: none;
+	overflow-y: scroll;
+	text-align: left;
+} 
