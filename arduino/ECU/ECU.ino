@@ -80,9 +80,9 @@ void loop()
   Serial.print("rpm: ");
   Serial.println(rpm);
   // RPM = (A*256)+B)/4  
-  unsigned char rpmstmp[8] = {((rpm*4) >> 8), ((rpm*4) & 0x00FF), random(0,255), random(0,255), 
-    random(0,255), random(0,255),random(0,255), random(0,255)};
-  CAN.sendMsgBuf(0x80,0, 8, rpmstmp);
+  unsigned char rpmstmp[8] = {0x03, 0x41, 0x0C, ((rpm*4) >> 8), ((rpm*4) & 0x00FF), 
+    0,0,0,0};
+  CAN.sendMsgBuf(0x7E8,0, 8, rpmstmp);
   delay(50);
 
   // set check engine light if over rpm

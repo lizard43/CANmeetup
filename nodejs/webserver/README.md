@@ -6,7 +6,7 @@ This webserver serves the html and javascript files in this folder.
 The webserver serves files at 8080.
 The javascript attempts to connect to a webserver on localhost at default port of 8081
 
-Because this is a demo and I'm server local files, I've taken liberty of relaxing security by setting the http response headers of
+Because this is a demo and I'm serving local files, I've taken liberty of relaxing security by setting the http response headers of
 * 'Access-Control-Allow-Origin': '*',
 * 'Access-Control-Allow-Methods': 'GET',
 * 'Access-Control-Allow-Headers': 'Content-Type'
