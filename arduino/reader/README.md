@@ -1,12 +1,7 @@
 # CAN Bus meetup talk
 
-The CAN_BUS_Shield folder contains files from 
-* https://github.com/Seeed-Studio/CAN_BUS_Shield
-* Refer to the README file in the CAN_BUS_Shield folder for info and its license
-* I'm not using the Shield but this code works great for the cheap MCP2515 controller that you can find on ebay for ~$2.
-* Move/Copy the CAN_BUS_Shield folder to your "libraries" folder in your Arduino IDE installation
-
-![MCP2515](/images/mcp2515.jpg)
+This folder  consists of:
+* Arduino files used to read CAN Bus messages and send to serial port as a JSON message.
 
 The connection between the Arduino and the MCP2515 module is SPI
 
