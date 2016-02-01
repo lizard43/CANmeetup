@@ -46,10 +46,9 @@ window.onload = function() {
    }
 
    // parse received json and update gauges
+   // response: {"ID":"0100","data":[ 18, 64, 157, 249, 109, 183, 143, 185 ]}
+   //    Where ID is hex and data are decimals
    function updateGauges(response) {
-      $('#logger').val(new Date().getTime() + ' -> ' 
-         + JSON.stringify(response) + '\n' + $('#logger').val());
-
       // check engine light
       if (response.ID === '0089') {
          if (response.data[0] === 255) {

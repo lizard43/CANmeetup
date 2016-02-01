@@ -18,8 +18,7 @@ int rpm = 0;
 
 MCP_CAN CAN(SPI_CS_PIN);   
 
-void setup()
-{
+void setup() {
   pinMode(btPin,INPUT);
   digitalWrite(btPin, HIGH);
   
@@ -31,12 +30,10 @@ void setup()
 START_INIT:
 
   // init can bus : baudrate = 500k
-  if(CAN_OK == CAN.begin(CAN_500KBPS))                   
-  {
+  if(CAN_OK == CAN.begin(CAN_500KBPS)) {
     Serial.println("ECU CAN BUS init ok!");
   }
-  else
-  {
+  else {
     Serial.println("ECU CAN BUS init fail");
     Serial.println("Attempting Init ECU CAN BUS again");
     delay(100);
@@ -103,4 +100,14 @@ void loop()
     Serial.println(0);    
     delay(50);
   }
+
+
+//        if (canId == 0x07DF) {
+//          Serial.println("ECU Response");  
+//          7E9 03 7F 23 80
+//        07E8 06 41 00 98 3B 80 11 00
+//          unsigned char stmp[8] = {06, 41, 00, 98, 0x3B, 80, 11, 00};
+//          CAN.sendMsgBuf(0x07E8,0, 8, stmp);
+//        }
+
 }
