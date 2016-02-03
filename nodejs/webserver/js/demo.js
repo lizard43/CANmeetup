@@ -33,7 +33,7 @@ window.onload = function() {
    // create dashboard and contained gauges
    function createDashboard() {
       createDash();
-      createGauge(dashContainer, "0080", "RPM", 75, 225, 85, { // third is +size bias.
+      createGauge(dashContainer, "07E8", "RPM", 75, 225, 85, { // third is +size bias.
          from: 8000,
          to: 10000
       }, {
@@ -59,22 +59,13 @@ window.onload = function() {
       } else {
 
          // RPM
-         if (response.ID == '0080') {
-            if (rpm !== 0) {
-               if (response.data[0] !== 0) {
-                  rpm = response.data[0];
-                  rpm = rpm * 39.215686275;
-               } else {
-                  rpm = 0;
-               }
-            } else {
-               if (response.data[0] !== 0) {
-                  rpm = response.data[0];
-                  rpm = rpm * 39.215686275;
-               }
-            }
-
-            readings[response.ID] = rpm;
+         if (response.ID == '07E8') {
+            // RPM = (A*256)+B)/4
+            var a = response.data[3];
+            var b = response.data[4];
+            rpm = ( (a*256) + b ) / 4;
+            // scale to 0-10000 for drawing gauge
+            readings[response.ID] = rpm*39.216;
 
          } else {
             readings[response.ID] = response.data[0];
@@ -187,14 +178,14 @@ window.onload = function() {
             .attr("cx", this.config.cx)
             .attr("cy", this.config.cy)
             .attr("r", 0.9 * this.config.raduis)
-            .style("fill", (xDim < 0.5 ? this.config.bezelColor : this.config.bezelDimColor))
+            .style("fill", this.config.bezelColor)
             .style("stroke", "#e0e0e0")
             .style("stroke-width", "2px");
 
          var faceContainer = this.body.append("svg:g").attr("class", "faceContainer"); // for day/night changes
          var bandsContainer = this.body.append("svg:g").attr("class", "bandsContainer"); // for day/night changes
          var ticksContainer = this.body.append("svg:g").attr("class", "ticksContainer"); // for day/night changes
-         this.redrawDimmableFace(xDim); //0);
+         this.redrawDimmableFace(0); //0);
 
          var pointerContainer = this.body.append("svg:g").attr("class", "pointerContainer");
          this.drawPointer(0);

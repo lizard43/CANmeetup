@@ -1,8 +1,9 @@
 {
-  "name": "d3-arduino-thermometer",
+  "name": "CAN-Bus-demo-reader",
   "version": "0.0.1",
   "description": "interface with arduino over serial and graph with D3.js",
-  "author": "minizatic",
+  "author": "roadster",
+  "license": "MIT"
   "dependencies": {
     "serialport": "^2.0.6",
     "socket.io": "^1.4.3"
