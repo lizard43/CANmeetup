@@ -33,7 +33,7 @@ window.onload = function() {
    // create dashboard and contained gauges
    function createDashboard() {
       createDash();
-      createGauge(dashContainer, "07E8", "RPM", 75, 225, 85, { // third is +size bias.
+      createGauge(dashContainer, "02C4", "RPM", 75, 225, 85, { // third is +size bias.
          from: 8000,
          to: 10000
       }, {
@@ -59,13 +59,13 @@ window.onload = function() {
       } else {
 
          // RPM
-         if (response.ID == '07E8') {
+         if (response.ID == '02C4') {
             // RPM = (A*256)+B)/4
             var a = response.data[3];
             var b = response.data[4];
             rpm = ( (a*256) + b ) / 4;
             // scale to 0-10000 for drawing gauge
-            readings[response.ID] = rpm*39.216;
+            readings[response.ID] = rpm; //*39.216;
 
          } else {
             readings[response.ID] = response.data[0];
